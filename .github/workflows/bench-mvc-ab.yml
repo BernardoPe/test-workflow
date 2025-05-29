@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-22.04
     env:
       GH: true
+      GRADLE_OPTS: "-Xmx4096M -Xms512M -XX:MaxMetaspaceSize=512m"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
