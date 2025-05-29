@@ -22,10 +22,10 @@ jobs:
 
       - name: Run Benchmarks
         run: |
-          chmod +x $GITHUB_WORKSPACE/benches/ab/bench-webflux.sh \
-                $GITHUB_WORKSPACE/code/gradlew \
-                $GITHUB_WORKSPACE/benches/ab/run-ab.sh
-          $GITHUB_WORKSPACE/benches/ab/bench-webflux.sh
+          chmod +x ./bench-webflux.sh ../../code/gradlew ./run-ab.sh
+          ./bench-webflux.sh
+        working-directory:
+            $GITHUB_WORKSPACE/benches/ab
 
       - name: List Github workspace contents
         run: ls -lR $GITHUB_WORKSPACE
@@ -34,4 +34,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: benchmark-results-ab-${{runner.os}}
-          path: ./webflux-results.log
+          path: ${{ github.workspace }}/benches/ab/webflux-results.log
