@@ -25,7 +25,7 @@ jobs:
           chmod +x ./bench-webflux.sh ../../code/gradlew ./run-ab.sh
           ./bench-webflux.sh
         working-directory:
-            $GITHUB_WORKSPACE/benches/ab
+            /benches/ab
 
       - name: List Github workspace contents
         run: ls -lR $GITHUB_WORKSPACE
