@@ -1,6 +1,6 @@
 cd ../../code || exit
 
-./gradlew runQuarkus --no-daemon -DbenchTimeout=1 -DXms=1024m -DXmx=16G -Djdk.tracePinnedThreads > ../benches/jmeter/quarkus.log &
+./gradlew runQuarkus --no-daemon -DbenchTimeout=1 -Djdk.tracePinnedThreads > ../benches/jmeter/quarkus.log &
 PID_GRADLE=$!
 
 cd ../benches/jmeter || exit
@@ -56,7 +56,7 @@ echo ":::::::::::::::::::::::::::::::     Sync Bench Done"
 
 cd ../../code || exit
 
-./gradlew runQuarkusVirtual --no-daemon -DbenchTimeout=1 -DXms=1024m -DXmx=16G > ../benches/jmeter/quarkus.log &
+./gradlew runQuarkusVirtual --no-daemon -DbenchTimeout=1 > ../benches/jmeter/quarkus.log &
 PID_GRADLE=$!
 
 cd ../benches/jmeter || exit
