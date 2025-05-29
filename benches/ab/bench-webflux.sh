@@ -6,7 +6,7 @@
 
 cd ../../code || exit
 
-./gradlew runWebflux -DbenchTimeout=1 > ../benches/ab/spring-webflux.log &
+./gradlew runWebflux --info --stacktrace --scan --debug -DbenchTimeout=1 > ../benches/ab/spring-webflux.log &
 PID_GRADLE=$!
 
 cd ../benches/ab || exit
