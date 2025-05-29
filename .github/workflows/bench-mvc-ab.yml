@@ -82,4 +82,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: benchmark-results-jmeter-mvc-virtual-${{runner.os}}
-          path: ${{ github.workspace }}/benches/ab/spring-mvc-virtual-results.log
+          path: ${{ github.workspace }}/benches/jmeter/spring-mvc-virtual-results.log
