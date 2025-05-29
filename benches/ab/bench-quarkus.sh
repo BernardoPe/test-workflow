@@ -59,13 +59,11 @@ echo "##########################################"
 
 # Gracefully terminate the Spring Boot application when running on local machine.
 # It will send a SIGTERM corresponding to Exit code 143.
-if [ "$GH" != "true" ]; then
-  kill $PID_GRADLE
-  kill $PID_QUARKUS
+kill $PID_GRADLE
+kill $PID_QUARKUS
 
-  # Wait for the process to exit
-  wait $PID_GRADLE
-fi
+# Wait for the process to exit
+wait $PID_GRADLE
 
 echo ":::::::::::::::::::::::::::::::     Sync Bench Done"
 
