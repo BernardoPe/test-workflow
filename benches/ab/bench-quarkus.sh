@@ -1,12 +1,13 @@
 cd ../../code || exit
 
-./gradlew runQuarkus --info --stacktrace --scan --debug -DbenchTimeout=1 -Djdk.tracePinnedThreads > ../benches/ab/quarkus.log &
+./gradlew runQuarkus --info --stacktrace --scan --debug -DbenchTimeout=1 -Djdk.tracePinnedThreads | tee ../benches/ab/quarkus.log &
 PID_GRADLE=$!
 
 cd ../benches/ab || exit
 
 sleep 1
 while ! grep -m1 'Starting Quarkus Application' < quarkus.log; do
+    echo "Waiting for Quarkus to start..."
     sleep 1
 done
 
