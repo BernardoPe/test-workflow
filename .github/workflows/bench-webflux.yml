@@ -1,4 +1,4 @@
-name: Benchmark Webflux with Apache Benchmark
+name: Benchmark Webflux
 
 on:
   workflow_dispatch:
@@ -25,9 +25,6 @@ jobs:
           cd $GITHUB_WORKSPACE/benches/ab
           chmod +x ./bench-webflux.sh ../../code/gradlew ./run-ab.sh
           ./bench-webflux.sh
-
-      - name: List Github workspace contents
-        run: ls -lR $GITHUB_WORKSPACE
 
       - name: Upload result artifacts
         uses: actions/upload-artifact@v4

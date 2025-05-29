@@ -1,4 +1,4 @@
-name: Benchmark Quarkus with Apache Benchmark
+name: Benchmark Quarkus
 
 on:
   workflow_dispatch:
@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-22.04
     env:
       GH: true
+      GRADLE_OPTS: -Xmx2g -Xms512m
+      ORG_GRADLE_PARALLEL: false
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -41,6 +43,8 @@ jobs:
     runs-on: ubuntu-22.04
     env:
       GH: true
+      GRADLE_OPTS: -Xmx2g -Xms512m
+      ORG_GRADLE_PARALLEL: false
     steps:
       - uses: actions/checkout@v4
 

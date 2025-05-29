@@ -1,4 +1,4 @@
-name: Benchmark MVC with Apache Benchmark
+name: Benchmark MVC
 
 on:
   workflow_dispatch:
@@ -29,13 +29,13 @@ jobs:
       - name: Upload result artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: benchmark-results-jmeter-mvc-${{runner.os}}
+          name: benchmark-results-ab-mvc-${{runner.os}}
           path: ${{ github.workspace }}/benches/ab/spring-mvc-results.log
 
       - name: Upload result artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: benchmark-results-jmeter-mvc-virtual-${{runner.os}}
+          name: benchmark-results-ab-mvc-virtual-${{runner.os}}
           path: ${{ github.workspace }}/benches/ab/spring-mvc-virtual-results.log
 
   jmeter:
