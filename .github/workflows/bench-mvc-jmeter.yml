@@ -35,6 +35,9 @@ jobs:
           chmod +x ./bench-mvc.sh ../../code/gradlew ./run-jmeter.sh
           ./bench-mvc.sh
 
+      - name: List Github workspace contents
+        run: ls -lR $GITHUB_WORKSPACE
+
       - name: Upload result artifacts
         uses: actions/upload-artifact@v4
         with:
