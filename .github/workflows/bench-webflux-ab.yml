@@ -22,8 +22,8 @@ jobs:
 
       - name: Run Benchmarks
         run: |
-          chmod +x ./$GITHUB_WORKSPACE/benches/ab/bench-webflux.sh $GITHUB_WORKSPACE/code/gradlew $GITHUB_WORKSPACE/benches/ab/run-ab.sh
-          ./$GITHUB_WORKSPACE/benches/ab/bench-webflux.sh
+          chmod +x $GITHUB_WORKSPACE/benches/ab/bench-webflux.sh $GITHUB_WORKSPACE/code/gradlew $GITHUB_WORKSPACE/benches/ab/run-ab.sh
+          .$GITHUB_WORKSPACE/benches/ab/bench-webflux.sh
 
       - name: List Github workspace contents
         run: ls -lR $GITHUB_WORKSPACE
