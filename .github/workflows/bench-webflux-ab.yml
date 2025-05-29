@@ -1,0 +1,33 @@
+name: Apache Benchmark
+
+on:
+  workflow_dispatch:
+
+jobs:
+  ab:
+    runs-on: ubuntu-22.04
+    env:
+      GH: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup java
+        uses: actions/setup-java@v4
+        with:
+          java-version: 21
+          distribution: corretto
+
+      - name: Run Benchmarks
+        run: |
+          cd $GITHUB_WORKSPACE/benches/ab
+          chmod +x ./bench-webflux.sh ../../code/gradlew ./run-ab.sh
+          ./bench-webflux.sh
+
+      - name: Upload result artifacts
+        uses: actions/upload-artifact@v4
+        with:
+            name: benchmark-results-ab-${{matrix.os}}
+            path: ./webflux-results-ab.log
