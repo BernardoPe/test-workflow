@@ -1,6 +1,6 @@
 cd ../../code || exit
 
-./gradlew runQuarkus --no-daemon -DbenchTimeout=1 -Djdk.tracePinnedThreads > ../benches/ab/quarkus.log &
+./gradlew runQuarkus --no-daemon --info -DbenchTimeout=1 -Djdk.tracePinnedThreads > ../benches/ab/quarkus.log &
 PID_GRADLE=$!
 
 cd ../benches/ab || exit
