@@ -1,4 +1,4 @@
-name: Benchmark Webflux with Apache Benchmark
+name: Benchmark MVC with Apache Benchmark
 
 on:
   workflow_dispatch:
@@ -23,11 +23,17 @@ jobs:
       - name: Run Benchmarks
         run: |
           cd $GITHUB_WORKSPACE/benches/ab
-          chmod +x ./bench-webflux.sh ../../code/gradlew ./run-ab.sh
-          ./bench-webflux.sh
+          chmod +x ./bench-mvc.sh ../../code/gradlew ./run-ab.sh
+          ./bench-mvc.sh
 
       - name: Upload result artifacts
         uses: actions/upload-artifact@v4
         with:
-            name: benchmark-results-ab-${{matrix.os}}
-            path: ${GITHUB_WORKSPACE}/benches/ab/webflux-results.log
+          name: benchmark-results-jmeter-mvc-${{runner.os}}
+          path: ${GITHUB_WORKSPACE}/benches/ab/spring-mvc-results.log
+
+      - name: Upload result artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: benchmark-results-jmeter-mvc-virtual-${{runner.os}}
+          path: ${GITHUB_WORKSPACE}/benches/ab/spring-mvc-virtual-results.log

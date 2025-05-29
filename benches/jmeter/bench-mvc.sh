@@ -17,23 +17,23 @@ echo ":::::::::::::::::::::::::::::::     Spring running PID = $PID_MVC"
 echo ":::::::::::::::::::::::::::::::     Gradle running PID = $PID_GRADLE"
 
 ROUTES=(
-   presentations/rocker
-   presentations/jstachio
-   presentations/pebble
-   presentations/freemarker
-   presentations/trimou
+#   presentations/rocker
+#   presentations/jstachio
+#   presentations/pebble
+#   presentations/freemarker
+#   presentations/trimou
 #   presentations/velocity
-   presentations/thymeleaf
+#   presentations/thymeleaf
    presentations/htmlFlow
-   presentations/kotlinx
-   stocks/rocker
-   stocks/jstachio
-   stocks/pebble
-   stocks/freemarker
-   stocks/trimou
+#   presentations/kotlinx
+#   stocks/rocker
+#   stocks/jstachio
+#   stocks/pebble
+#   stocks/freemarker
+#   stocks/trimou
 #   stocks/velocity
-   stocks/thymeleaf
-   stocks/htmlFlow
+#   stocks/thymeleaf
+#   stocks/htmlFlow
 )
 
 echo "##########################################"

@@ -1,4 +1,4 @@
-name: Benchmark Webflux with JMeter
+name: Benchmark MVC with JMeter
 
 on:
   workflow_dispatch:
@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-22.04
     env:
       GH: true
+
     steps:
       - uses: actions/checkout@v4
 
@@ -31,11 +32,17 @@ jobs:
         run: |
           export PATH=$GITHUB_WORKSPACE/apache-jmeter-5.6.3/bin:$PATH
           cd $GITHUB_WORKSPACE/benches/jmeter
-          chmod +x ./bench-webflux.sh ../../code/gradlew ./run-jmeter.sh
-          ./bench-webflux.sh
+          chmod +x ./bench-mvc.sh ../../code/gradlew ./run-jmeter.sh
+          ./bench-mvc.sh
 
       - name: Upload result artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: benchmark-results-jmeter-${{matrix.os}}
-          path: ${GITHUB_WORKSPACE}/benches/jmeter/webflux-results.log
+          name: benchmark-results-jmeter-mvc-${{runner.os}}
+          path: ${GITHUB_WORKSPACE}/benches/ab/spring-mvc-results.log
+
+      - name: Upload result artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: benchmark-results-jmeter-mvc-virtual-${{runner.os}}
+          path: ${GITHUB_WORKSPACE}/benches/jmeter/spring-mvc-virtual-results.log

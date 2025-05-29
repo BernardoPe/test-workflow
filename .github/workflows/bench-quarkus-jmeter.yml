@@ -1,4 +1,4 @@
-name: Benchmark Webflux with JMeter
+name: Benchmark Quarkus with JMeter
 
 on:
   workflow_dispatch:
@@ -31,11 +31,17 @@ jobs:
         run: |
           export PATH=$GITHUB_WORKSPACE/apache-jmeter-5.6.3/bin:$PATH
           cd $GITHUB_WORKSPACE/benches/jmeter
-          chmod +x ./bench-webflux.sh ../../code/gradlew ./run-jmeter.sh
-          ./bench-webflux.sh
+          chmod +x ./bench-quarkus.sh ../../code/gradlew ./run-jmeter.sh
+          ./bench-quarkus.sh
 
       - name: Upload result artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: benchmark-results-jmeter-${{matrix.os}}
-          path: ${GITHUB_WORKSPACE}/benches/jmeter/webflux-results.log
+          name: benchmark-results-jmeter-quarkus-${{runner.os}}
+          path: ${GITHUB_WORKSPACE}/benches/jmeter/quarkus-results.log
+
+      - name: Upload result artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: benchmark-results-jmeter-quarkus-virtual-${{runner.os}}
+          path: ${GITHUB_WORKSPACE}/benches/jmeter/quarkus-results-virtual.log
