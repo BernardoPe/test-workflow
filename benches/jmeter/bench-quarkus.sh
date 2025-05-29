@@ -1,6 +1,6 @@
 cd ../../code || exit
 
-./gradlew runQuarkus --no-daemon -DbenchTimeout=1 -Djdk.tracePinnedThreads > ../benches/jmeter/quarkus.log &
+./gradlew runQuarkus --no-daemon -Dorg.gradle.jvmargs="-Xms512M -Xmx16g" -DbenchTimeout=1 -Djdk.tracePinnedThreads > ../benches/jmeter/quarkus.log &
 PID_GRADLE=$!
 
 cd ../benches/jmeter || exit
