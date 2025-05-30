@@ -6,7 +6,7 @@
 
 cd ../../code || exit
 
-./gradlew runWebflux --info --stacktrace --scan --debug -DbenchTimeout=1 > ../benches/ab/spring-webflux.log &
+./gradlew runWebflux -Dorg.gradle.jvmargs="-Xms512M -Xmx16g" -DbenchTimeout=1 > ../benches/ab/spring-webflux.log &
 PID_GRADLE=$!
 
 cd ../benches/ab || exit

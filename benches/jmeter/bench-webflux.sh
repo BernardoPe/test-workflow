@@ -1,6 +1,6 @@
 cd ../../code || exit
 
-./gradlew runWebflux -DbenchTimeout=1 > ../benches/jmeter/spring-webflux.log &
+./gradlew runWebflux -Dorg.gradle.jvmargs="-Xms512M -Xmx16g" -DbenchTimeout=1 > ../benches/jmeter/spring-webflux.log &
 
 PID_GRADLE=$!
 
@@ -37,7 +37,7 @@ ROUTES=(
 #  stocks/thymeleaf
 #  stocks/thymeleaf/sync
 #  stocks/thymeleaf/virtualSync
-#  stocks/htmlFlow
+  stocks/htmlFlow
 #  stocks/htmlFlow/suspending
 #  stocks/htmlFlow/sync
 #  stocks/htmlFlow/virtualSync
