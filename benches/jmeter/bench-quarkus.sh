@@ -23,7 +23,8 @@ ROUTES=(
 #  presentations/trimou
 #  presentations/velocity
 #  presentations/thymeleaf
-  presentations/htmlFlow
+#  presentations/htmlFlow
+   presentations/reactive/htmlFlow
 #  presentations/kotlinx
 #  stocks/rocker
 #  stocks/jstachio
@@ -33,6 +34,7 @@ ROUTES=(
 #  stocks/velocity
 #  stocks/thymeleaf
 #  stocks/htmlFlow
+    stocks/reactive/htmlFlow
 )
 
 #
