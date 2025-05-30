@@ -15,9 +15,9 @@ ROUTES=(
 #  presentations/thymeleaf
 #  presentations/thymeleaf/sync
 #  presentations/thymeleaf/virtualSync
-  presentations/htmlFlow
+#  presentations/htmlFlow
 #  presentations/htmlFlow/suspending
-#  presentations/htmlFlow/sync
+  presentations/htmlFlow/sync
 #  presentations/htmlFlow/virtualSync
 #  presentations/kotlinx
 #  presentations/kotlinx/sync
@@ -37,7 +37,7 @@ ROUTES=(
 #  stocks/thymeleaf
 #  stocks/thymeleaf/sync
 #  stocks/thymeleaf/virtualSync
-  stocks/htmlFlow
+#  stocks/htmlFlow
 #  stocks/htmlFlow/suspending
 #  stocks/htmlFlow/sync
 #  stocks/htmlFlow/virtualSync

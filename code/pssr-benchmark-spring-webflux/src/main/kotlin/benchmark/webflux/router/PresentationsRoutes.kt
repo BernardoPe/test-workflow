@@ -49,7 +49,7 @@ class PresentationsRoutes(
      * We need to release calling thread to proceed request handling and return Publisher<String> with HTML.
      * Using Dispatchers.Unconfined on Blocking IO will prevent Progressive Rendering.
      */
-    private val scope = CoroutineScope(Dispatchers.Default)
+    private val scope = CoroutineScope(Dispatchers.IO)
 
     /**
      * It executes the initial continuation of a coroutine in the current
